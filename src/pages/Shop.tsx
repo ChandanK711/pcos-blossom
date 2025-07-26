@@ -17,9 +17,14 @@ const Shop = () => {
     {
       id: 1,
       name: 'Her Balance Herbal Tea for PCOS',
-      icon: Coffee,
-      price: '$24.99',
-      originalPrice: '$29.99',
+      icon: () => (
+     <img 
+      src="tea.jpg" 
+    alt="Her Balance Logo" 
+    className="w-10 h-10 rounded-full object-cover"
+    />
+  ),
+      price: '300/-',
       badge: 'Bestseller',
       badgeColor: 'bg-primary text-primary-foreground',
       description: 'Sip your way to balance with our thoughtfully crafted herbal tea, designed to support hormone harmony and overall well-being.',
@@ -37,9 +42,14 @@ const Shop = () => {
     {
       id: 2,
       name: 'Mental Wellness Journal for PCOS',
-      icon: Book,
-      price: '$18.99',
-      originalPrice: '$22.99',
+      icon: () => (
+     <img 
+      src="journal.jpg" 
+      alt="Her Balance Logo" 
+      className="w-10 h-10 rounded-full object-cover"
+      />
+  ),
+      price: '200/-',
       badge: 'New',
       badgeColor: 'bg-secondary text-secondary-foreground',
       description: 'Track mood, symptoms, cycle changes, energy, and emotional patterns with this beautifully designed wellness journal.',
@@ -57,9 +67,14 @@ const Shop = () => {
     {
       id: 3,
       name: 'Yoga & Mudras for PCOS',
-      icon: Heart,
-      price: '$32.99',
-      originalPrice: '$39.99',
+      icon: () => (
+     <img 
+      src="yoga-cover-page.jpg" 
+      alt="Her Balance Logo" 
+      className="w-10 h-10 rounded-full object-cover"
+    />
+  ),
+      price: '100/-',
       badge: 'Popular',
       badgeColor: 'bg-accent text-accent-foreground',
       description: 'Guided yoga flows specifically designed for hormone support and stress relief, featuring gentle movements tailored for PCOS.',
@@ -77,9 +92,14 @@ const Shop = () => {
     {
       id: 4,
       name: 'PCOS-Friendly Recipe Book',
-      icon: Utensils,
-      price: '$26.99',
-      originalPrice: '$31.99',
+      icon: () => (
+     <img 
+      src="receipe.jpg" 
+     alt="Her Balance Logo" 
+     className="w-10 h-10 rounded-full object-cover"
+     />
+  ),
+      price: '200/-',
       badge: 'Essential',
       badgeColor: 'bg-primary text-primary-foreground',
       description: 'Nourish your body with delicious, low-glycemic, anti-inflammatory meals that support hormone health and satisfy your taste buds.',
@@ -113,24 +133,22 @@ const Shop = () => {
           {products.map((product) => (
             <Card key={product.id} className="card-soft group hover:scale-105 overflow-hidden">
               <div className="relative">
-                {/* Badge */}
-                <div className="absolute top-4 right-4 z-10">
-                  <Badge className={`${product.badgeColor} rounded-full`}>
-                    {product.badge}
-                  </Badge>
-                </div>
+                <div className="sm:absolute sm:top-4 sm:right-4 z-10 mt-2 sm:mt-0 self-end sm:self-auto">
+  <Badge className={`${product.badgeColor} rounded-full`}>
+    {product.badge}
+  </Badge>
+</div>
 
                 {/* Product Header */}
                 <div className={`${product.color} p-6 -m-6 mb-6 rounded-t-2xl`}>
                   <div className="flex items-center gap-4">
                     <div className="p-3 bg-white/50 rounded-full">
-                      <product.icon className="h-8 w-8 text-foreground" />
+                      <product.icon />
                     </div>
                     <div>
                       <h2 className="text-xl font-bold mb-1">{product.name}</h2>
                       <div className="flex items-center gap-2">
                         <span className="text-2xl font-bold text-primary">{product.price}</span>
-                        <span className="text-sm text-muted-foreground line-through">{product.originalPrice}</span>
                       </div>
                     </div>
                   </div>
@@ -182,12 +200,12 @@ const Shop = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Complete Wellness Bundle</h3>
               <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Get all four wellness tools together and save 25% on your journey to hormonal balance.
+                Get all four wellness tools together
               </p>
               <div className="flex items-center justify-center gap-4 mb-6">
-                <span className="text-3xl font-bold text-primary">$89.99</span>
-                <span className="text-xl text-muted-foreground line-through">$119.96</span>
-                <Badge className="bg-primary text-primary-foreground">Save $30</Badge>
+                <span className="text-3xl font-bold text-primary">750/-</span>
+                <span className="text-xl text-muted-foreground line-through">800/-</span>
+                <Badge className="bg-primary text-primary-foreground">Save 50/-</Badge>
               </div>
               <Button className="btn-botanical text-lg px-8 py-3">
                 Get Complete Bundle

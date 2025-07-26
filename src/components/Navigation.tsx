@@ -23,9 +23,13 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <NavLink to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-primary/10 rounded-full group-hover:bg-primary/20 smooth-transition">
-              <Leaf className="h-6 w-6 text-primary" />
-            </div>
+            <div className="p-2 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-all duration-200">
+          <img 
+            src="her-balance-logo.jpg" 
+    alt="Her Balance Logo" 
+    className="w-10 h-10 rounded-full object-cover"
+  />
+</div>
             <span className="text-xl font-bold text-foreground">Her Balance</span>
           </NavLink>
 

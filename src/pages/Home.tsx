@@ -10,9 +10,13 @@ const Home = () => {
       <section className="hero-gradient py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-8 flex justify-center">
-            <div className="p-4 bg-primary/10 rounded-full">
-              <Leaf className="h-12 w-12 text-primary" />
-            </div>
+            <div className="p-2 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-all duration-200">
+  <img 
+    src="her-balance-logo.jpg" 
+    alt="Her Balance Logo" 
+    className="w-[7.7rem] h-[7.7rem] rounded-full object-cover"
+  />
+</div>
           </div>
           
           <h1 className="hero-title mb-6">
