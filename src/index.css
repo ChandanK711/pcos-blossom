@@ -8,35 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Her Balance - Soft PCOS Wellness Design System */
+    --background: 20 20% 98%;
+    --foreground: 340 15% 25%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 350 50% 97%;
+    --card-foreground: 340 15% 25%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 350 50% 97%;
+    --popover-foreground: 340 15% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Soft blush pink primary */
+    --primary: 340 65% 75%;
+    --primary-foreground: 350 50% 97%;
+    --primary-soft: 340 45% 85%;
+    --primary-glow: 340 70% 88%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Sage green secondary */
+    --secondary: 150 25% 80%;
+    --secondary-foreground: 340 15% 25%;
+    --secondary-soft: 150 20% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Warm cream muted */
+    --muted: 40 30% 95%;
+    --muted-foreground: 340 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Soft green accent */
+    --accent: 150 30% 85%;
+    --accent-foreground: 340 15% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 70%;
+    --destructive-foreground: 350 50% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 340 20% 90%;
+    --input: 340 25% 92%;
+    --ring: 340 65% 75%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+    
+    /* Botanical gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-soft)));
+    --gradient-botanical: linear-gradient(135deg, hsl(var(--primary-soft)), hsl(var(--secondary-soft)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+    
+    /* Soft shadows */
+    --shadow-gentle: 0 4px 20px -4px hsl(var(--primary) / 0.15);
+    --shadow-botanical: 0 8px 30px -8px hsl(var(--secondary) / 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-gentle: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +122,54 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-medium;
+  }
+}
+
+@layer components {
+  /* Botanical design components */
+  .botanical-gradient {
+    background: var(--gradient-botanical);
+  }
+  
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .gentle-shadow {
+    box-shadow: var(--shadow-gentle);
+  }
+  
+  .botanical-shadow {
+    box-shadow: var(--shadow-botanical);
+  }
+  
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+  
+  .gentle-transition {
+    transition: var(--transition-gentle);
+  }
+  
+  /* Hero text styling */
+  .hero-title {
+    @apply text-4xl md:text-6xl font-bold leading-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-foreground mb-6;
+  }
+  
+  .card-soft {
+    @apply bg-card border border-border/50 rounded-2xl p-6 gentle-shadow smooth-transition hover:shadow-lg;
+  }
+  
+  .btn-botanical {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full font-medium smooth-transition hover:scale-105 gentle-shadow;
+  }
+  
+  .btn-secondary-soft {
+    @apply bg-secondary hover:bg-secondary/90 text-secondary-foreground px-6 py-3 rounded-full font-medium smooth-transition hover:scale-105;
   }
 }
